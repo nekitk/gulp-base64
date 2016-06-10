@@ -32,6 +32,7 @@ gulp.task('build', function () {
             extensions: ['svg', 'png', /\.jpg#datauri$/i],
             exclude:    [/\.server\.(com|net)\/dynamic\//, '--live.jpg'],
             maxImageSize: 8*1024, // bytes,
+            lineLength: 500,
             deleteAfterEncoding: false,
             debug: true
         }))
@@ -60,6 +61,9 @@ gulp.task('build', function () {
 
   - `maxImageSize` (Number)  
     Maximum filesize in bytes for changing image to base64.
+
+  - `lineLength` (Number)  
+    Line length to split output base64 with newlines.
 
   - `debug` (Boolean)  
     Enable log to console.
